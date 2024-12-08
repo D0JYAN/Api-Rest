@@ -1,0 +1,22 @@
+###Recuperar todos los personajes
+GET http://localhost:3000/personajes
+
+###Recuperar una pelicula por su ID
+GET http://localhost:3000/personajes/3
+
+###Recuperar todas las peliculas por ocupacion 
+GET http://localhost:3000/personajes?occupation=actriz
+
+###Crear un nuevo personaje
+POST http://localhost:3000/personajes
+Content-Type: application/json
+
+{
+    "name": "Jesus San",
+    "birthday": "20 de enero",
+    "age": 21,
+    "height": 176,
+    "eye_color": "marrón",
+    "hair_color": "negro",
+    "occupation": "empleado"
+}
