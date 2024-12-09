@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar los personajes</title>
+    <script type="module">
+        fetch('http://localhost:3000/personajes')
+        .then(res => res.json())
+        .then(personajes => {
+            const html = personajes.map(personaje => {
+                return 
+                `
+                <article data-id="${personaje.id}">
+                    <h2>${personaje.name}</h2>
+                    <p>${personaje.birthday}</p>
+                    <p>${personaje.age}</p>
+                    <p>${personaje.eye_color}</p>
+                    <p>${personaje.hair_color}</p>
+                    <p>${personaje.occupation}</p>
+                    <img src="${personaje.image_url}" alt="Imagen del personaje" />
+                </article>
+                `
+            }).join('')
+
+            document.querySelector('div').innerHTML = html
+        })
+    </script>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>
