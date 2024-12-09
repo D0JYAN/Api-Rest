@@ -1,5 +1,5 @@
 //Importar zod para validacion de datos
-const z = require('zod')
+import z from 'zod'
 
 //Validacion de datos con zod en tiempo de ejecución para agregar
 const esquemaPersonaje = z.object({
@@ -27,15 +27,10 @@ const esquemaPersonaje = z.object({
     })
 })
 
-function validacionPersonaje(object) {
+export function validacionPersonaje(object) {
     return esquemaPersonaje.safeParse(object)
 }
 
-function validacionParcialPersonaje(object) {
+export function validacionParcialPersonaje(object) {
     return esquemaPersonaje.partial().safeParse(object)
 }
-
-//Exportar la validacion para registro
-module.exports = validacionPersonaje
-//Exportar la validacion para actualizar
-module.exports = validacionParcialPersonaje

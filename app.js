@@ -1,19 +1,21 @@
 //Importar express
-const express = require('express')
+import express, { json } from 'express'
 //Crear una instancia de express
 const app = express()
-//Importar y utilizar el json con los datos de personajes
-const personajes = require('./personajes.json')
+//Importar y utilizar el json con los datos de personajes en ESModules
+//Crear un require
+const personajes = readJSON('./personajes.json')
 //Importar la libreria de crypto
-const crypto = require('node:crypto')
+import { randomUUID } from 'node:crypto'
 //Importar CORS
-const cors = require('cors')
+import cors from 'cors'
 //Importar el esquema de validacion de datos
-const validacionPersonaje = require('./schemas/personajes')
-const validacionParcialPersonaje = require('./schemas/personajes')
+import { validacionPersonaje, validacionParcialPersonaje } from './schemas/personajes.js'
+//Importar los utils
+import { readJSON } from './utils/readFilePersonajes.js'
 //Middlewares
 app.disable('x-powered-by')//Desactivar el header x-powered-by: Express
-app.use(express.json())//Acceder a la informacon enviada por el usuario
+app.use(json())//Acceder a la informacon enviada por el usuario
 app.use(cors(
     {
         origin: (origin, callback) => {
@@ -63,7 +65,7 @@ app.post('/personajes', (req, res) => {
         return res.status(400).json({error: JSON.parse(resultado.error.message)})
     }
     const nuevoPersonaje = {
-        id: crypto.randomUUID(),//Universal Unique ID
+        id: randomUUID(),//Universal Unique ID
         ...resultado.data//Solo se usa este metodo si todo ya fue validado
     }
     //Esto no es res por que se guarda el estado de al app en memoria
