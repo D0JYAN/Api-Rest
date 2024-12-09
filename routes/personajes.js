@@ -9,26 +9,21 @@ export const personajesRouter = Router()
 import { validacionPersonaje, validacionParcialPersonaje } from '../schemas/personajes.js'
 
 import { readJSON } from '../utils/readFilePersonajes.js'
+import { personajeModel } from '../models/personaje.js'
 //Importar y utilizar el json con los datos de personajes en ESModules
 //Crear un require
 const personajes = readJSON('../personajes.json')
 
 
-personajesRouter.get('/', (req, res) => {
+personajesRouter.get('/', async (req, res) => {
     const { occupation } = req.query
-    if (occupation) {
-        const filtrarPersonaje = personajes.filter(personaje =>
-            typeof personaje.occupation === 'string' &&
-            personaje.occupation.toLowerCase() === occupation.toLowerCase()
-        )
-        return res.json(filtrarPersonaje)
-    }
+    const personajes = await personajeModel.getAll({ occupation })
     res.json(personajes)
 })
 
-personajesRouter.get('/:id', (req, res) => {
+personajesRouter.get('/:id', async (req, res) => {
     const {id} = req.params
-    const personaje = personajes.find(personaje => personaje.id == id)
+    const personaje = await personajeModel.getById({ id })
     if (personaje) {
         res.json(personaje)
     } else {
@@ -36,52 +31,33 @@ personajesRouter.get('/:id', (req, res) => {
     }
 })
 
-personajesRouter.post('/', (req, res) => {
+personajesRouter.post('/', async (req, res) => {
     const resultado = validacionPersonaje(req.body)
     if (resultado.error) {
         return res.status(400).json({error: JSON.parse(resultado.error.message)})
     }
-    const nuevoPersonaje = {
-        id: randomUUID(),//Universal Unique ID
-        ...resultado.data//Solo se usa este metodo si todo ya fue validado
-    }
-    //Esto no es res por que se guarda el estado de al app en memoria
-    personajes.push(nuevoPersonaje)
+    const nuevoPersonaje = await personajeModel.create({ input: resultado.data })
     res.status(201).json(nuevoPersonaje)//El 201 es el correcto para indicar que se ha creado un nnuevo recurso
 })
 
-personajesRouter.delete('/:id', (req, res) => {
+personajesRouter.delete('/:id', async (req, res) => {
     const {id} = req.params
-    const personajeIndex = personajes.findIndex(personaje => personaje.id == id)
+    const resultado = await personajeModel.delete({ id })
 
-    if (personajeIndex == -1) {
+    if (resultado== false) {
         return res.status(404).json({message: 'Personaje no encontrado'})
     }
-
-    personajes.splice(personajeIndex, 1)
-
     return res.json({ message: 'Personaje eliminado' })
 })
 
-personajesRouter.patch('/:id', (req, res) => {
+personajesRouter.patch('/:id', async (req, res) => {
     const resultado = validacionParcialPersonaje(req.body)
     if(!resultado.success) {
         return res.status(400).json({error: JSON.parse(resultado.error.message)})
     }
     const {id} = req.params
 
-    const personajeIndex = personajes.findIndex(personaje => personaje.id == id)
-
-    if (personajeIndex == -1) {
-        return res.status(404).json({message: 'Personaje no encontrado'})
-    }
-
-    const actualizarPersonaje = {
-        ...personajes[personajeIndex],
-        ...resultado.data
-    }
-
-    personajes[personajeIndex] = actualizarPersonaje
-
+    const actualizarPersonaje = await personajeModel.update({ id, input: resultado.data})
+    
     return res.json(actualizarPersonaje)
 })
