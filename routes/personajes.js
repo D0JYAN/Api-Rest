@@ -1,6 +1,3 @@
-//Importar la libreria de crypto
-import { randomUUID } from 'node:crypto'
-
 //Importar router de express
 import { Router } from 'express'
 export const personajesRouter = Router()
@@ -8,11 +5,9 @@ export const personajesRouter = Router()
 //Importar el esquema de validacion de datos
 import { validacionPersonaje, validacionParcialPersonaje } from '../schemas/personajes.js'
 
-import { readJSON } from '../utils/readFilePersonajes.js'
+//Importar el modelo de personajes
 import { personajeModel } from '../models/personaje.js'
-//Importar y utilizar el json con los datos de personajes en ESModules
-//Crear un require
-const personajes = readJSON('../personajes.json')
+
 
 
 personajesRouter.get('/', async (req, res) => {
@@ -58,6 +53,6 @@ personajesRouter.patch('/:id', async (req, res) => {
     const {id} = req.params
 
     const actualizarPersonaje = await personajeModel.update({ id, input: resultado.data})
-    
+
     return res.json(actualizarPersonaje)
 })
