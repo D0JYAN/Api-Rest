@@ -13,7 +13,7 @@ Content-Type: application/json
 
 {
     "name": "Jesus San",
-    "birthday": "20 de enero",
+    "birthday": "29 de enero",
     "age": 21,
     "height": 176,
     "eye_color": "marrón",
