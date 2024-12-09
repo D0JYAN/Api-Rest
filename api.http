@@ -20,3 +20,12 @@ Content-Type: application/json
     "hair_color": "negro",
     "occupation": "empleado"
 }
+
+###Actualizar un personaje
+PATCH  http://localhost:3000/personajes/3
+Content-Type: application/json
+
+{
+    "eye_color": "marrón",
+    "hair_color": "castaño"
+}

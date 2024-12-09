@@ -1,7 +1,7 @@
 //Importar zod para validacion de datos
 const z = require('zod')
 
-//Validacion de datos con zod en tiempo de ejecución
+//Validacion de datos con zod en tiempo de ejecución para agregar
 const esquemaPersonaje = z.object({
     name: z.string({
         invalid_type_error: 'El nombre debe ser un texto',
@@ -31,4 +31,11 @@ function validacionPersonaje(object) {
     return esquemaPersonaje.safeParse(object)
 }
 
+function validacionParcialPersonaje(object) {
+    return esquemaPersonaje.partial().safeParse(object)
+}
+
+//Exportar la validacion para registro
 module.exports = validacionPersonaje
+//Exportar la validacion para actualizar
+module.exports = validacionParcialPersonaje
