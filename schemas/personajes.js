@@ -27,10 +27,10 @@ const esquemaPersonaje = z.object({
     })
 })
 
-export function validacionPersonaje(object) {
-    return esquemaPersonaje.safeParse(object)
+export function validacionPersonaje(input) {
+    return esquemaPersonaje.safeParse(input)
 }
 
-export function validacionParcialPersonaje(object) {
-    return esquemaPersonaje.partial().safeParse(object)
+export function validacionParcialPersonaje(input) {
+    return esquemaPersonaje.partial().safeParse(input)
 }
