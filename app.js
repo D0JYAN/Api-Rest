@@ -6,12 +6,33 @@ const app = express()
 const personajes = require('./personajes.json')
 //Importar la libreria de crypto
 const crypto = require('node:crypto')
+//Importar CORS
+const cors = require('cors')
 //Importar el esquema de validacion de datos
 const validacionPersonaje = require('./schemas/personajes')
 const validacionParcialPersonaje = require('./schemas/personajes')
 //Middlewares
 app.disable('x-powered-by')//Desactivar el header x-powered-by: Express
 app.use(express.json())//Acceder a la informacon enviada por el usuario
+app.use(cors(
+    {
+        origin: (origin, callback) => {
+            //Rutas aceptadas
+            const ACCEPTED_ORIGINS = [
+                'http://localhost:8080',
+                'http://192.168.1.80:8080',
+                'https://localhost:3000'
+            ]
+            if (ACCEPTED_ORIGINS.includes(origin)) {
+                return callback(null, true)
+            }
+            if (!origin) {
+                return callback(null, true)
+            }
+            return callback(new Error('Sin permisos de CORS'))
+        }
+    }
+))//Solucionar problemas con CORS
 
 //Todos los recurso que sean personajes se recuperan con /personajes
 app.get('/personajes', (req, res) => {
@@ -71,6 +92,19 @@ app.patch('/personajes/:id', (req, res) => {
     personajes[personajeIndex] = actualizarPersonaje
 
     return res.json(actualizarPersonaje)
+})
+//Borrar un personaje
+app.delete('/personajes/:id', (req, res) => {
+    const {id} = req.params
+    const personajeIndex = personajes.findIndex(personaje => personaje.id == id)
+
+    if (personajeIndex == -1) {
+        return res.status(404).json({message: 'Personaje no encontrado'})
+    }
+
+    personajes.splice(personajeIndex, 1)
+
+    return res.json({ message: 'Personaje eliminado' })
 })
 //Puerto y levantamiento del mismo
 const PORT = process.env.PORT ?? 3000

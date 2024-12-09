@@ -8,7 +8,7 @@
         "eye_color": "marrón",
         "hair_color": "negro",
         "occupation": "estudiante",
-        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/6/69/Anime_-_Sakuta_Azusagawa.jpg"
+        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/2/24/Sakuta_Azusagawa_Anime.png/revision/latest/scale-to-width-down/1000?cb=20210206155856&path-prefix=es"
     },
     {
         "id": 2,
@@ -19,105 +19,105 @@
         "eye_color": "azul",
         "hair_color": "negro",
         "occupation": "actriz",
-        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/b/bc/Mai_Sakurajima_-_Anime.jpg"
+        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/f/ff/Mai_Sakurajima_Anime.png/revision/latest?cb=20210204180809&path-prefix=es"
     },
     {
         "id": 3,
         "name": "Rio Futaba",
-        "birthday": "24 de enero",
-        "age": 17,
-        "height": 159,
-        "eye_color": "morado",
-        "hair_color": "púrpura",
+        "birthday": "23 de octubre",
+        "age": 16,
+        "height": 155,
+        "eye_color": "Avellana claro",
+        "hair_color": "Castaño claro",
         "occupation": "estudiante",
-        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/d/d8/Rio_Futaba_-_Portada_Anime.png"
+        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/e/e1/Rio_en_llamada_%28Anime%29.jpg/revision/latest?cb=20240624175647&path-prefix=es"
     },
     {
         "id": 4,
         "name": "Tomoe Koga",
-        "birthday": "23 de diciembre",
-        "age": 17,
-        "height": 165,
-        "eye_color": "marrón",
-        "hair_color": "verde",
+        "birthday": "23 de mayo",
+        "age": 15,
+        "height": 152,
+        "eye_color": "Azul grisáceo",
+        "hair_color": "Castaño claro",
         "occupation": "estudiante",
-        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/a/a6/Tomoe_Koga_-_Anime.jpg"
+        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/c/cc/Tomoe_Sorprendida_-_Anime_HD.jpg/revision/latest?cb=20230728153426&path-prefix=es"
     },
     {
         "id": 5,
         "name": "Kaede Azusagawa",
-        "birthday": "16 de julio",
-        "age": 16,
-        "height": 148,
-        "eye_color": "azul",
-        "hair_color": "azul",
+        "birthday": "5 de noviembre",
+        "age": 14,
+        "height": 162,
+        "eye_color": "Castaño",
+        "hair_color": "Castaño",
         "occupation": "estudiante",
-        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/b/b4/Kaede_Azusagawa_-_Anime.jpg"
+        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/9/9e/Episodio_02_-_015_Kaede.jpg/revision/latest/scale-to-width-down/1000?cb=20240908183226&path-prefix=es"
     },
     {
         "id": 6,
         "name": "Shoko Makinohara",
-        "birthday": "10 de noviembre",
-        "age": 18,
-        "height": 164,
-        "eye_color": "marrón",
-        "hair_color": "negro",
+        "birthday": "10 de abril",
+        "age": 16,
+        "height": 158,
+        "eye_color": "Azul claro",
+        "hair_color": "Negro",
         "occupation": "estudiante",
-        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/b/b7/Dise%C3%B1o_Anime_-_Shoko_Joven.jpg"
+        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/1/13/Shoko_Makinohara_Anime_%28ni%C3%B1a%29.png/revision/latest?cb=20210310184223&path-prefix=es"
     },
     {
         "id": 7,
         "name": "Nodoka Toyohama",
-        "birthday": "21 de marzo",
-        "age": 17,
-        "height": 160,
-        "eye_color": "marrón",
-        "hair_color": "rubio",
+        "birthday": "14 de marzo",
+        "age": 16,
+        "height": 158,
+        "eye_color": "Azul",
+        "hair_color": "Rubio",
         "occupation": "estudiante",
-        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/4/41/Nodoka_Toyohama_-_Anime.jpg"
+        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/2/2c/Nodoka_Toyohama_Anime.jpg/revision/latest/scale-to-width-down/1000?cb=20210309215342&path-prefix=es"
     },
     {
         "id": 8,
         "name": "Yuuma Kunimi",
         "birthday": "2 de marzo",
-        "age": 18,
+        "age": 17,
         "height": 170,
-        "eye_color": "negro",
-        "hair_color": "marrón",
+        "eye_color": "Verde",
+        "hair_color": "Marrón grisáceo",
         "occupation": "estudiante",
-        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/9/91/Anime_Yuuma_Kunimi.jpg"
+        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/f/f4/Dise%C3%B1o_anime_-_Yuuma_Kunimi.jpg/revision/latest?cb=20231007042924&path-prefix=es"
     },
     {
         "id": 9,
         "name": "Saki Kamisato",
         "birthday": "7 de diciembre",
-        "age": 18,
+        "age": 17,
         "height": 162,
-        "eye_color": "azul",
-        "hair_color": "púrpura",
+        "eye_color": "Café",
+        "hair_color": "Marrón rojizo",
         "occupation": "estudiante",
-        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/6/60/Saki_Kamisato_-_anime.jpg"
+        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/5/52/Saki_Kamisato_brazos_cruzados_-_anime.jpg/revision/latest?cb=20231007041213&path-prefix=es"
     },
     {
         "id": 10,
         "name": "Fumika Nanjou",
         "birthday": "5 de mayo",
-        "age": 18,
-        "height": 162,
-        "eye_color": "verde",
-        "hair_color": "café",
-        "occupation": "estudiante",
-        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/7/71/Anime_-_Fumika_Nanjou.jpg"
+        "age": 23,
+        "height": 165,
+        "eye_color": "Marrones",
+        "hair_color": "Castaño",
+        "occupation": "empleado",
+        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/6/69/Fumika_Nanjou_Anime.png/revision/latest/scale-to-width-down/1000?cb=20220519030141&path-prefix=es"
     },
     {
         "id": 11,
         "name": "Nana Yoneyama",
-        "birthday": "30 de enero",
-        "age": 17,
-        "height": 155,
-        "eye_color": "azul",
-        "hair_color": "blanco",
+        "birthday": "15 de enero",
+        "age": 15,
+        "height": 154,
+        "eye_color": "Marrones",
+        "hair_color": "Castaño",
         "occupation": "estudiante",
-        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/1/1d/Anime_Nana_Yoneyama.png"
+        "image_url": "https://static.wikia.nocookie.net/seishun20buta20yarou20wa20bunny20girl20senpai20no20yume/images/8/89/Nana_Yoneyama_Anime.jpg/revision/latest/scale-to-width-down/1000?cb=20230801014603&path-prefix=es"
     }
 ]

@@ -4,30 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mostrar los personajes</title>
+    <style>
+        article {
+            border: 1px solid white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            width: 320px;
+        }
+    </style>
     <script type="module">
         fetch('http://localhost:3000/personajes')
         .then(res => res.json())
         .then(personajes => {
             const html = personajes.map(personaje => {
-                return 
-                `
+                return `
                 <article data-id="${personaje.id}">
                     <h2>${personaje.name}</h2>
+                    <img src="${personaje.image_url}" alt="Imagen del personaje"/>
                     <p>${personaje.birthday}</p>
                     <p>${personaje.age}</p>
                     <p>${personaje.eye_color}</p>
                     <p>${personaje.hair_color}</p>
                     <p>${personaje.occupation}</p>
-                    <img src="${personaje.image_url}" alt="Imagen del personaje" />
+                    <button>Eliminar</button>
                 </article>
                 `
             }).join('')
 
-            document.querySelector('div').innerHTML = html
+            document.querySelector('main').innerHTML = html
+
+            document.addEventListener('click', e => {
+                if (e.target.matches('button')) {
+                    const articulo = e.target.closest('article')
+                    const id = articulo.dataset.id
+
+                    fetch(`http://localhost:3000/personajes/${id}`, {
+                        method: 'DELETE'
+                    })
+                   .then(res => {
+                    if (res.ok) {
+                        articulo.remove()
+                    }
+                   })
+                }
+            })
         })
     </script>
 </head>
 <body>
-    <div class="container"></div>
+    <main></main>
 </body>
 </html>
