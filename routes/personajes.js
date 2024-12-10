@@ -1,17 +1,17 @@
 //Importar router de express
 import { Router } from 'express'
 
-//Importar el modelo de personajes
-import { personajeModel } from '../models/personaje.js'
+//Importar el controlador
+import { personajeController } from '../controllers/personajes.js'
 
 export const personajesRouter = Router()
 
-personajesRouter.get('/', personajeModel.getAll)
+personajesRouter.get('/', personajeController.getAll)
 
-personajesRouter.post('/', personajeModel.create)
+personajesRouter.post('/', personajeController.create)
 
-personajesRouter.get('/:id', personajeModel.getById)
+personajesRouter.get('/:id', personajeController.getById)
 
-personajesRouter.delete('/:id', personajeModel.delete)
+personajesRouter.delete('/:id', personajeController.delete)
 
-personajesRouter.patch('/:id', personajeModel.update)
+personajesRouter.patch('/:id', personajeController.update)
