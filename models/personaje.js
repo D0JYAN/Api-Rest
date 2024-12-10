@@ -1,16 +1,16 @@
 //Importar la libreria de crypto
 import { randomUUID } from 'node:crypto'
 
-import { readJSON } from '../utils/readFilePersonajes.js'
+import { readJSON } from '../utils.js'
 //Importar y utilizar el json con los datos de personajes en ESModules
 //Crear un require
-const personajes = readJSON('../personajes.json')
+const personajes = readJSON('./personajes.json')
 
 export class personajeModel {
     static async getAll({ occupation }) {
         if (occupation) {
             return personajes.filter(personaje =>
-                personaje.occupation.some(occupation => occupation.toLowerCase() === occupation.toLowerCase())
+                personaje.occupation.some(o => o.toLowerCase() === occupation.toLowerCase())
             )
         }
         return personajes
@@ -21,7 +21,7 @@ export class personajeModel {
         return personaje
     }
 
-    static async create(input) {
+    static async create({ input }) {
         const nuevoPersonaje = {
             id: randomUUID(),//Universal Unique ID
             ...input//Solo se usa este metodo si todo ya fue validado
@@ -42,10 +42,10 @@ export class personajeModel {
     static async update({ id, input}) {
         const personajeIndex = personajes.findIndex(personaje => personaje.id == id)
         if (personajeIndex == -1) return false
-        actualizarPersonaje = {
+        personajes[personajeIndex] = {
             ...personajes[personajeIndex],
             ...input
         }
-        return actualizarPersonaje[personajeIndex]
+        return personajes[personajeIndex]
     }
 }

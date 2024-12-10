@@ -2,7 +2,7 @@
   "name": "api-rest",
   "version": "1.0.0",
   "description": "creacion de una api rest",
-  "main": "index.js",
+  "main": "app.js",
   "type":"module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
