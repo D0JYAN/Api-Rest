@@ -1,4 +1,5 @@
-import { personajeModel } from "../models/personaje.js"
+//import { personajeModel } from "../models/personaje.js"
+import { personajeModel } from '../models/mysql/personajes.js'
 
 //Importar el esquema de validacion de datos
 import { validacionPersonaje, validacionParcialPersonaje } from '../schemas/personajes.js'
