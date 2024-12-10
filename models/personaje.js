@@ -10,7 +10,8 @@ export class personajeModel {
     static async getAll({ occupation }) {
         if (occupation) {
             return personajes.filter(personaje =>
-                personaje.occupation.some(o => o.toLowerCase() === occupation.toLowerCase())
+                typeof personaje.occupation === 'string' &&
+                personaje.occupation.toLowerCase() === occupation.toLowerCase()
             )
         }
         return personajes
@@ -26,7 +27,6 @@ export class personajeModel {
             id: randomUUID(),//Universal Unique ID
             ...input//Solo se usa este metodo si todo ya fue validado
         }
-        //Esto no es res por que se guarda el estado de al app en memoria
         personajes.push(nuevoPersonaje)
 
         return nuevoPersonaje
@@ -39,7 +39,7 @@ export class personajeModel {
         return true
     }
 
-    static async update({ id, input}) {
+    static async update({ id, input }) {
         const personajeIndex = personajes.findIndex(personaje => personaje.id == id)
         if (personajeIndex == -1) return false
         personajes[personajeIndex] = {
