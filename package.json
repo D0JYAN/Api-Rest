@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "creacion de una api rest",
   "main": "app.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.2",
+    "mysql2": "^3.11.5",
     "zod": "3.23.8"
   }
 }
