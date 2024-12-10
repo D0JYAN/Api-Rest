@@ -22,10 +22,13 @@ Content-Type: application/json
 }
 
 ###Actualizar un personaje
-PATCH  http://localhost:3000/personajes/3
+PATCH http://localhost:3000/personajes/3
 Content-Type: application/json
 
 {
     "eye_color": "marrón",
     "hair_color": "castaño"
 }
+
+###Borrar un personaje
+DELETE http://localhost:3000/personajes/1
