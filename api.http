@@ -5,7 +5,7 @@ GET http://localhost:3000/personajes
 GET http://localhost:3000/personajes/4b7c9a11-6f2d-4706-8c44-f11b8f00381c
 
 ###Recuperar todas las peliculas por ocupacion 
-GET http://localhost:3000/personajes?occupation=actriz
+GET http://localhost:3000/personajes?occupation=empleado
 
 ###Crear un nuevo personaje
 POST http://localhost:3000/personajes
@@ -22,13 +22,13 @@ Content-Type: application/json
 }
 
 ###Actualizar un personaje
-PATCH http://localhost:3000/personajes/3
+PATCH http://localhost:3000/personajes/3462ad4d-a988-47dc-b15a-5a031c10f024
 Content-Type: application/json
 
 {
-    "eye_color": "marrón",
-    "hair_color": "castaño"
+    "eye_color": "negro",
+    "hair_color": "negro"
 }
 
 ###Borrar un personaje
-DELETE http://localhost:3000/personajes/6
+DELETE http://localhost:3000/personajes/3462ad4d-a988-47dc-b15a-5a031c10f024
