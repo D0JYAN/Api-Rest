@@ -2,7 +2,7 @@
 GET http://localhost:3000/personajes
 
 ###Recuperar una pelicula por su ID
-GET http://localhost:3000/personajes/3
+GET http://localhost:3000/personajes/4b7c9a11-6f2d-4706-8c44-f11b8f00381c
 
 ###Recuperar todas las peliculas por ocupacion 
 GET http://localhost:3000/personajes?occupation=actriz
@@ -31,4 +31,4 @@ Content-Type: application/json
 }
 
 ###Borrar un personaje
-DELETE http://localhost:3000/personajes/1
+DELETE http://localhost:3000/personajes/6
