@@ -22,7 +22,7 @@ Content-Type: application/json
 }
 
 ###Actualizar un personaje
-PATCH http://localhost:3000/personajes/3462ad4d-a988-47dc-b15a-5a031c10f024
+PATCH http://localhost:3000/personajes/87ad3762-0eae-4122-8815-1da1b3fd7995
 Content-Type: application/json
 
 {
@@ -31,4 +31,4 @@ Content-Type: application/json
 }
 
 ###Borrar un personaje
-DELETE http://localhost:3000/personajes/3462ad4d-a988-47dc-b15a-5a031c10f024
+DELETE http://localhost:3000/personajes/87ad3762-0eae-4122-8815-1da1b3fd7995
